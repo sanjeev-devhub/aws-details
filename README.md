@@ -7,25 +7,99 @@
 
 ## Table of Contents
 
-**PART 1 — CORE AWS SERVICES**
-1. EC2
-2. S3
-3. RDS
-4. DynamoDB
-5. Lambda
-6. API Gateway
-7. VPC
-8. IAM
-9. CloudWatch
-10. CloudFormation / Terraform (IaC)
+### [PART 1 — CORE AWS SERVICES](#part-1--core-aws-services)
+1. [EC2 (Elastic Compute Cloud)](#1-ec2-elastic-compute-cloud)
+2. [S3 (Simple Storage Service)](#2-s3-simple-storage-service)
+3. [RDS (Relational Database Service)](#3-rds-relational-database-service)
+4. [DynamoDB](#4-dynamodb)
+5. [Lambda](#5-lambda)
+6. [API Gateway](#6-api-gateway)
+7. [VPC (Virtual Private Cloud)](#7-vpc-virtual-private-cloud)
+8. [IAM (Identity and Access Management)](#8-iam-identity-and-access-management)
+9. [CloudWatch](#9-cloudwatch)
+10. [CloudFormation / Terraform (IaC)](#10-cloudformation--terraform-iac)
 
-**PART 2 — JAVA + AWS INTEGRATION**
-**PART 3 — MICROSERVICES ARCHITECTURE**
-**PART 4 — DEVOPS + CI/CD**
-**PART 5 — SECURITY**
-**PART 6 — SCENARIO-BASED QUESTIONS**
-**PART 7 — TROUBLESHOOTING**
-**PART 8 — Final Tips & Cheat Sheet**
+### [PART 2 — JAVA + AWS INTEGRATION](#part-2--java--aws-integration)
+- [2.1 Spring Boot Deployment on AWS](#21-spring-boot-deployment-on-aws)
+- [2.2 Microservices Architecture on AWS](#22-microservices-architecture-on-aws)
+- [2.3 ECS vs EKS vs EC2](#23-ecs-vs-eks-vs-ec2)
+- [2.4 API Deployment Strategies](#24-api-deployment-strategies)
+- [2.5 SQS / SNS with Spring Boot](#25-sqs--sns-with-spring-boot)
+- [2.6 AWS SDK for Java](#26-aws-sdk-for-java)
+- [2.7 Async Processing](#27-async-processing)
+- [2.8 Retry Mechanisms](#28-retry-mechanisms)
+- [2.9 Idempotency](#29-idempotency)
+- [2.10 Distributed Tracing](#210-distributed-tracing)
+- [2.11 OpenFeign with AWS](#211-openfeign-with-aws)
+- [2.12 Secrets Manager Integration](#212-secrets-manager-integration)
+- [2.13 Parameter Store (SSM Parameter Store)](#213-parameter-store-ssm-parameter-store)
+- [2.14 Production-Ready Architecture Example](#214-production-ready-architecture-example)
+- [2.15 Java + AWS Interview Q&A (Cross-cutting)](#215-java--aws-interview-qa-cross-cutting)
+
+### [PART 3 — MICROSERVICES ARCHITECTURE](#part-3--microservices-architecture)
+- [3.1 Service Discovery](#31-service-discovery)
+- [3.2 API Gateway Pattern](#32-api-gateway-pattern)
+- [3.3 Circuit Breaker — Resilience4j](#33-circuit-breaker--resilience4j)
+- [3.4 Distributed Transactions](#34-distributed-transactions)
+- [3.5 Step Functions for Orchestration](#35-step-functions-for-orchestration)
+- [3.6 Event-Driven Design](#36-event-driven-design)
+- [3.7 CQRS Basics](#37-cqrs-basics)
+- [3.8 Kafka vs SQS](#38-kafka-vs-sqs)
+- [3.9 Database Per Service](#39-database-per-service)
+- [3.10 Centralized Logging](#310-centralized-logging)
+- [3.11 Microservices Interview Q&A](#311-microservices-interview-qa)
+
+### [PART 4 — DEVOPS + CI/CD](#part-4--devops--cicd)
+- [4.1 Jenkins Pipeline (Declarative)](#41-jenkins-pipeline-declarative)
+- [4.2 GitHub Actions](#42-github-actions)
+- [4.3 Dockerization Best Practices](#43-dockerization-best-practices)
+- [4.4 ECS Deployment](#44-ecs-deployment)
+- [4.5 Deployment Strategies](#45-deployment-strategies)
+- [4.6 CodeDeploy & CodePipeline](#46-codedeploy--codepipeline)
+- [4.7 Kubernetes Basics on AWS (EKS)](#47-kubernetes-basics-on-aws-eks)
+- [4.8 DevOps Interview Q&A](#48-devops-interview-qa)
+
+### [PART 5 — SECURITY](#part-5--security)
+- [5.1 Encryption at Rest & In Transit](#51-encryption-at-rest--in-transit)
+- [5.2 KMS (Key Management Service)](#52-kms-key-management-service)
+- [5.3 Secrets Manager](#53-secrets-manager)
+- [5.4 WAF (Web Application Firewall)](#54-waf-web-application-firewall)
+- [5.5 Shield](#55-shield)
+- [5.6 IAM Best Practices](#56-iam-best-practices)
+- [5.7 Token-Based Authentication](#57-token-based-authentication)
+- [5.8 OAuth2 / OIDC](#58-oauth2--oidc)
+- [5.9 Secure API Design Checklist](#59-secure-api-design-checklist)
+- [5.10 Security Interview Q&A](#510-security-interview-qa)
+
+### [PART 6 — SCENARIO-BASED QUESTIONS](#part-6--scenario-based-questions)
+- [6.1 How would you design scalable microservices on AWS?](#61-how-would-you-design-scalable-microservices-on-aws)
+- [6.2 How do you handle sudden traffic spikes?](#62-how-do-you-handle-sudden-traffic-spikes)
+- [6.3 How do you troubleshoot high latency?](#63-how-do-you-troubleshoot-high-latency)
+- [6.4 How do you secure APIs?](#64-how-do-you-secure-apis)
+- [6.5 How do you reduce AWS cost?](#65-how-do-you-reduce-aws-cost)
+- [6.6 How do you migrate a monolith to microservices?](#66-how-do-you-migrate-a-monolith-to-microservices)
+- [6.7 What happens if one availability zone fails?](#67-what-happens-if-one-availability-zone-fails)
+- [6.8 How would you process millions of events?](#68-how-would-you-process-millions-of-events)
+- [6.9 How would you design a highly available architecture?](#69-how-would-you-design-a-highly-available-architecture)
+
+### [PART 7 — TROUBLESHOOTING](#part-7--troubleshooting)
+- [7.1 Debugging Production Issues — Method](#71-debugging-production-issues--method)
+- [7.2 CloudWatch Logs Insights — Killer Queries](#72-cloudwatch-logs-insights--killer-queries)
+- [7.3 Memory Leaks (Java)](#73-memory-leaks-java)
+- [7.4 CPU Spikes](#74-cpu-spikes)
+- [7.5 Connection Timeout Issues](#75-connection-timeout-issues)
+- [7.6 Lambda Timeout Issues](#76-lambda-timeout-issues)
+- [7.7 Database Bottlenecks](#77-database-bottlenecks)
+- [7.8 ECS Task Failures](#78-ecs-task-failures)
+- [7.9 Deployment Rollback Strategies](#79-deployment-rollback-strategies)
+- [7.10 Troubleshooting Interview Q&A](#710-troubleshooting-interview-qa)
+
+### [PART 8 — Final Tips & Cheat Sheet](#part-8--final-tips--cheat-sheet)
+- [8.1 Interview Cheat Sheet](#81-interview-cheat-sheet)
+- [8.2 Common "Why?" Answers to Memorize](#82-common-why-answers-to-memorize)
+- [8.3 Java-Specific Gotchas](#83-java-specific-gotchas)
+- [8.4 Final Preparation Plan (7 days)](#84-final-preparation-plan-7-days)
+- [8.5 Closing Note](#85-closing-note)
 
 ---
 
@@ -1552,6 +1626,8 @@ public class OrderServiceStack extends Stack {
 
 ---
 
+[↑ Back to top](#table-of-contents)
+
 # PART 2 — JAVA + AWS INTEGRATION
 
 This is where most Java AWS Developer interviews focus. Expect deep code questions.
@@ -2109,6 +2185,8 @@ DR: cross-region Aurora Global, S3 CRR, DynamoDB Global Tables
 
 ---
 
+[↑ Back to top](#table-of-contents)
+
 # PART 3 — MICROSERVICES ARCHITECTURE
 
 ---
@@ -2323,6 +2401,8 @@ Structured JSON, correlation IDs, log levels by environment, retention policies,
 > Kafka if you need: log retention (replay), high throughput per partition with ordering, multiple consumer groups reading independently, stream processing (KStreams/Flink), CDC pipelines. SQS for simple decoupling, low ops overhead.
 
 ---
+
+[↑ Back to top](#table-of-contents)
 
 # PART 4 — DEVOPS + CI/CD
 
@@ -2552,6 +2632,8 @@ spec:
 
 ---
 
+[↑ Back to top](#table-of-contents)
+
 # PART 5 — SECURITY
 
 ---
@@ -2719,6 +2801,8 @@ Flows: Authorization Code + PKCE (web/mobile), Client Credentials (machine-to-ma
 > Network: VPC with no public subnets for app/db; CloudFront + WAF + Shield Advanced; private API GW. Identity: Cognito + MFA; JWT with short TTL + refresh; mTLS for B2B. Encryption: KMS CMKs with rotation; TLS 1.3; field-level encryption for PII. Access: least privilege IAM; permission boundaries; SCPs; Access Analyzer. Audit: CloudTrail (org trail) + Config + GuardDuty + Security Hub; central security account. Compliance: PCI DSS / SOC 2 controls; quarterly access reviews; pen tests.
 
 ---
+
+[↑ Back to top](#table-of-contents)
 
 # PART 6 — SCENARIO-BASED QUESTIONS
 
@@ -2915,6 +2999,8 @@ For < 10K msg/s with simple decoupling: SQS is enough.
 
 ---
 
+[↑ Back to top](#table-of-contents)
+
 # PART 7 — TROUBLESHOOTING
 
 ---
@@ -3087,6 +3173,8 @@ Where to look:
 
 ---
 
+[↑ Back to top](#table-of-contents)
+
 # PART 8 — Final Tips & Cheat Sheet
 
 ---
@@ -3162,3 +3250,8 @@ For each AWS topic, your three-line answer template is:
 That structure beats memorized definitions. Interviewers want to see **decisions + tradeoffs + scars** — exactly the things you've earned with hands-on work.
 
 Good luck. You've got this.
+
+
+---
+
+[↑ Back to top](#table-of-contents)
